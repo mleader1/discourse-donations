@@ -31,18 +31,20 @@ function displayErrors(state, errors) {
 }
 
 function insertCheckout(state, tagInfo, content, siteSettings) {
+    let amount = tagInfo.attrs['amount'] * 100;
+
     let token = state.push('stripe-checkout-form-open', 'form', 1);
     token.attrs = [['method', 'POST'], ['action', '/checkout']];
 
     token = state.push('stripe-checkout-form-amount', 'input', 0);
-    token.attrs = [['type', 'hidden'], ['name', 'amount'], ['value', tagInfo.attrs['amount']]];
+    token.attrs = [['type', 'hidden'], ['name', 'amount'], ['value', amount]];
 
     token = state.push('stripe-checkout-script-open', 'script', 0);
     token.attrs = [
         ['src', 'https://checkout.stripe.com/checkout.js'],
         ['class', 'stripe-button'],
         ['data-key', siteSettings.discourse_donations_public_key],
-        ['data-amount', tagInfo.attrs['amount']],
+        ['data-amount', amount],
         ['data-name', siteSettings.discourse_donations_shop_name],
         ['data-description', content],
         ['data-image', tagInfo.attrs['image'] || ''],
