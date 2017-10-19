@@ -2,7 +2,11 @@
 
 [![Build Status](https://travis-ci.org/chrisbeach/discourse-donations.svg?branch=master)](https://travis-ci.org/choiceaustralia/discourse-donations)
 
-Accept donations in Discourse! Integrates with [Stripe](https://stripe.com).
+**⚠️ Work in Progress** - See [Issues](https://github.com/chrisbeach/discourse-donations/issues).
+
+Accept donations in Discourse. 
+
+Integrates with [Stripe](https://stripe.com).
 
 ## Installation
 
