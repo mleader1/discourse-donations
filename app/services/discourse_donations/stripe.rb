@@ -236,7 +236,8 @@ module DiscourseDonations
     end
 
     def product_id
-      @product_id ||= "#{SiteSetting.title}_recurring_donation".freeze
+      # @product_id ||= "#{SiteSetting.title}_recurring_donation".freeze
+      @product_id ||= "recurring_donation".freeze
     end
 
     def product_name
